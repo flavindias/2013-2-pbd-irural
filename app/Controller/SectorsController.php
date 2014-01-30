@@ -40,12 +40,31 @@
     if ($this->Sector->delete($id)) {
         $this->redirect(array('action' => 'index'));
     }
+  
   }
+    public function preroute(){
+      $this->set('sectors', $this->Sector->find('all'));
+      if ($this->request->is('post')) {
+
+        
+      $destino = $_POST['Destino'];
+      $origem = $_POST['Origem'];
+      $route = $origem."_".$destino;
+      //$latlong = explode("_", $route);
+      $this->redirect(array('action' => 'route/'.$route));
+    }  
+
+    }
     
     public function route($string){
+      $this->layout = 'route';
     $latlong = explode("_", $string);
-    $this->set('latitude', $latlong[0]);
-    $this->set('longitude', $latlong[1]);
+    $this->set('latitudeO', $latlong[0]);
+    $this->set('longitudeO', $latlong[1]);
+    $this->set('latitudeD', $latlong[2]);
+    $this->set('longitudeD', $latlong[3]);
+    
+
 
   }
             

@@ -9,7 +9,7 @@
         /*Create an object for options*/
         var options={
           elt:document.getElementById('map'),        /*ID of element on the page where you want the map added*/
-          zoom:20,                                   /*initial zoom level of map*/
+          zoom:17,                                   /*initial zoom level of map*/
           latLng:{lat:-8.01439, lng:-34.95036},    /*center of map in latitude/longitude*/
           mtype:'osm'                                /*map type (osm)*/
         };
@@ -23,8 +23,8 @@
           passing in an array of location objects as the only parameter.*/
           map.routeType='pedestrian';
           map.addRoute([
-            {latLng: {lat:<?php echo($latitude); ?>, lng:<?php echo($longitude); ?>}},
-            {latLng: {lat:-8.01625, lng:-34.95107}}
+            {latLng: {lat:<?php echo($latitudeO); ?>, lng:<?php echo($longitudeO); ?>}},
+            {latLng: {lat:<?php echo($latitudeD); ?>, lng:<?php echo($longitudeD); ?>}}
           ]);
         });
       });
