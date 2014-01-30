@@ -41,7 +41,14 @@
         $this->redirect(array('action' => 'index'));
     }
   }
-                
+    
+    public function route($string){
+    $latlong = explode("_", $string);
+    $this->set('latitude', $latlong[0]);
+    $this->set('longitude', $latlong[1]);
+
+  }
+            
  }
 
 ?>
