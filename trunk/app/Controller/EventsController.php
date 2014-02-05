@@ -7,11 +7,12 @@
         $this->set('events', $this->Event->find('all'));  
         $this->set('sectors', $this->Sector->find('all'));             
     }
-    public function view($id = null) {
-      $this->set('sectors', $this->Sector->find('all'));
+
+    public function view($id){
       $this->Event->id = $id;
-      $this->set('Event', $this->Event->read());
+      $this->set('event', $this->Event->read());
     }
+
     public function add() {
       $this->set('sectors', $this->Sector->find('all'));
     	 $this->set('event', $this->Event->find('all'));  
@@ -41,6 +42,11 @@
     if ($this->Event->delete($id)) {
         $this->redirect(array('action' => 'index'));
     }
+  }
+
+  public function calendar(){
+    $this->layout = 'calendar';
+    $this->set('events', $this->Event->find('all'));   
   }
                 
  }
