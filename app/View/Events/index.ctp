@@ -1,12 +1,13 @@
 <div class='Conteudo'>
     <p><?php echo $this->Html->link("Cadastrar novo Evento", array('action' => 'add')); ?></p>
+    <p><a href="calendar">Visualizar no Calendário</a></p>
 <table>
     <tr>
         <th>Código</th>
         <th>Nome</th>
-        <th>Data</th>
+        <th>Data Inicial</th>
         <th>Local</th>
-        <th>Horário</th>
+        <th>Horário Inicial</th>
         <th>Preço</th>
         <th>Ações</th>
     </tr>
@@ -20,13 +21,13 @@
             <?php echo $event['Event']['nome']; ?>
         </td>
         <td>
-            <?php echo $event['Event']['data']; ?>
+            <?php echo $event['Event']['datainicial']; ?>
         </td>
         <td>
             <?php echo $event['Event']['local']; ?>
         </td>
         <td>
-            <?php echo $event['Event']['horario']; ?>
+            <?php echo $event['Event']['horarioinicial']; ?>
         </td>
         <td>
             <?php echo $event['Event']['preco']; ?>
