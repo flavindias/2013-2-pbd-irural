@@ -2,7 +2,7 @@
 
 class Menu extends AppModel {
 
-   public $useTable = 'cardapio';
+   public $useTable = 'cardapios';
 }
 
 ?>

@@ -1,6 +1,7 @@
 <?php
 /**
  *
+ * PHP 5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -13,19 +14,35 @@
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.View.Layouts
  * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>		
+<style type="text/css"> 
+        * {  margin: 0px; padding: 0px }
+        form input{
+             
+        }
+    </style>
+
+
+
+	<?php echo $this->Html->css('fullcalendar'); ?>
+    <?php echo $this->Html->script('jquery.min'); ?>
+    <?php echo $this->Html->script('moment.min'); ?>
+    <?php echo $this->Html->script('fullcalendar'); ?>
+    <?php echo $this->Html->css('shadowbox'); ?>
+    
+    <script type="text/javascript">
+		Shadowbox.init();
+	</script>	
+
+	<title>
+		<?php echo $cakeDescription ?>:
 		<?php echo $title_for_layout; ?>
 	</title>
-	<script src="http://open.mapquestapi.com/sdk/js/v7.0.s/mqa.toolkit.js?key=Fmjtd%7Cluur290b20%2C7x%3Do5-908gg6"></script>
-
 	<?php
 		echo $this->Html->meta('icon');
 
@@ -34,22 +51,19 @@
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
-
 	?>
+	
+	
 </head>
-<body onload="getLocation();">
-	<div id="container">
-		<div id="header">			
-		</div>
-		<div id="content">
+
+<body>
+				<div id="container">
+			<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">			
-		</div>
-	</div>
-	
-</body>
+		
+	</div></body>
 </html>

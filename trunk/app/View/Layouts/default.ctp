@@ -16,14 +16,12 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
+	<title>		
 		<?php echo $title_for_layout; ?>
 	</title>
 	<script src="http://open.mapquestapi.com/sdk/js/v7.0.s/mqa.toolkit.js?key=Fmjtd%7Cluur290b20%2C7x%3Do5-908gg6"></script>
@@ -38,11 +36,18 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('script');
 
 	?>
+	<?php echo $this->Html->css('fullcalendar'); ?>	
+	<?php echo $this->Html->script('jquery.min.js'); ?>
+	<?php echo $this->Html->script('fullcalendar.js'); ?>
+	<?php echo $this->Html->script('moment.min.js'); ?>
+
+	<script type="text/javascript">
+		Shadowbox.init();
+	</script>	
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+		<div id="header">			
 		</div>
 		<div id="content">
 
@@ -51,14 +56,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
 		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	</div>	
 </body>
 </html>

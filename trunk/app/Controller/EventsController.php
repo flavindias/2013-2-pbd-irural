@@ -45,7 +45,7 @@
   }
 
   public function calendar(){
-    $this->layout = 'calendar';
+    
     $this->set('events', $this->Event->find('all'));   
   }
                 

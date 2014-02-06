@@ -1,6 +1,6 @@
 <div class='Conteudo'>
     <p><?php echo $this->Html->link("Cadastrar novo Evento", array('action' => 'add')); ?></p>
-    <p><a href="calendar">Visualizar no Calendário</a></p>
+    <p><?php echo $this->Html->link("Visualizar no Calendário", array('action' => 'calendar')); ?></p>
 <table>
     <tr>
         <th>Código</th>

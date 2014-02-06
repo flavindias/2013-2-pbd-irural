@@ -7,7 +7,18 @@
 
 </pre>
  -->
+            <?php 
+                $hasType = array();
+                foreach ($menu_types as $menu_type) {
+                    $k = $menu_type['MenuType']['id'];
+                    $v = $menu_type['MenuType']['nome'];
+                    $hasType[$k] = $v;
+                    # code...
+                 };
 
+
+
+                 ?>
 
 <div class='Conteudo'>
     <p><?php echo $this->Html->link("Cadastrar novo item de cardápio", array('action' => 'add')); ?></p>
@@ -15,6 +26,7 @@
     <tr>
         <th>Código</th>
         <th>Nome</th>
+        <th>Tipo</th>
         <th>Ações</th>
     </tr>
 
@@ -25,6 +37,9 @@
         </td>
         <td>
             <?php echo $menuitem['MenuItem']['nome']; ?>
+        </td>
+        <td>
+            <?php echo($hasType[$menuitem['MenuItem']['tipo_id']]); ?>
         </td>
         <td class='actions'>
             <?php echo $this->Html->link(
