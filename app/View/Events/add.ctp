@@ -14,9 +14,12 @@
 				 	# code...
 				 };
 				echo $this->Form->input('Event.setor_id', array('label'=> 'Setor Responsável: <br>', 'required'=>'required', 'options' => $hasType, 'class'=>' form-inline form-control')); ?>
-			<?php echo $this->Form->input('Event.data',array('label' => 'Data: <br>','id' => 'data')); ?>
+			<?php echo $this->Form->input('Event.datainicial',array('label' => 'Data Inicial: <br>','id' => 'data')); ?>
+			<?php echo $this->Form->input('Event.datafinal',array('label' => 'Data Final: <br>','id' => 'data')); ?>
 			<?php echo $this->Form->input('Event.local',array('label' => 'Local: <br>','id' => 'local')); ?>
-			<?php echo $this->Form->input('Event.horario',array('label' => 'Horário: <br>','id' => 'horario')); ?>
+			<?php echo $this->Form->input('Event.horarioinicial',array('label' => 'Horário Inicial: <br>','id' => 'horario')); ?>
+			<?php echo $this->Form->input('Event.horariofinal',array('label' => 'Horário Final: <br>','id' => 'horario')); ?>
+			<?php echo $this->Form->input('Event.descricao',array('label' => 'Descrição: <br>','id' => 'descricao')); ?>
 			<?php echo $this->Form->input('Event.preco',array('label' => 'Preço: <br>','id' => 'preco')); ?>
 	</fieldset>
 </div>

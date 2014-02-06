@@ -2,7 +2,7 @@
 
 class Address extends AppModel {
 
-   public $useTable = 'endereco';
+   public $useTable = 'enderecos';
 
 }
 

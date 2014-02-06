@@ -2,7 +2,7 @@
 
 class DietList extends AppModel {
 
-   public $useTable = 'lista_dieta';
+   public $useTable = 'lista_dietas';
 }
 
 ?>
